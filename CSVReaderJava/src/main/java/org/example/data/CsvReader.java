@@ -21,11 +21,11 @@ public class CsvReader {
                 String[] values = line.split(",");
 
                 try {
-                    LocalDate date = LocalDate.parse(values[0], DATE_FORMAT);
-                    String category = values[1];
-                    String description = values[2];
-                    BigDecimal amount = new BigDecimal(values[3]);
-                    String paymentMethod = values[4];
+                    LocalDate date = LocalDate.parse(values[0].trim(), DATE_FORMAT);
+                    String category = values[1].trim();
+                    String description = values[2].trim();
+                    BigDecimal amount = new BigDecimal(values[3].trim());
+                    String paymentMethod = values[4].trim();
                     records.add(new ExpenseRecord(date,category,description,amount,paymentMethod));
                 } catch (Exception e) {
                     e.printStackTrace();

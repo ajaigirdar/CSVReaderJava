@@ -1,6 +1,7 @@
 package org.example.data;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +20,7 @@ public class ExpenseRecord {
         this.date = date;
         this.category = category;
         this.description = description;
-        this.amount = amount;
+        this.amount = amount.setScale(2, RoundingMode.HALF_UP);
         this.paymentMethod = paymentMethod;
     }
 
