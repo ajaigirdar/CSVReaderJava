@@ -71,4 +71,12 @@ public class ExpenseRecord {
                 amount + ", " +
                 paymentMethod;
     }
+
+    public String toCsvString() {
+        return date.format(DATE_FORMAT) + ", " +
+                category + ", " +
+                description + ", " +
+                amount + ", " +
+                paymentMethod;
+    }
 }

@@ -12,8 +12,8 @@ public class ConsoleUI {
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 
-    public ConsoleUI() {
-        this.expenseService = new ExpenseService();
+    public ConsoleUI(ExpenseService expenseService) {
+        this.expenseService = expenseService;
     }
 
 public void displayAllRecords() {

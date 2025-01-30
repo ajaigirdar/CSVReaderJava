@@ -37,6 +37,9 @@ public class CsvReader {
             e.printStackTrace();
         }
         return records;
+    }
+
+    public void writeCSV(List<ExpenseRecord> records) {
 
     }
 }
