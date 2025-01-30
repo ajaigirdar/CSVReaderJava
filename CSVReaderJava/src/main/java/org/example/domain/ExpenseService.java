@@ -1,8 +1,8 @@
 package org.example.domain;
 
 import org.example.data.CsvReader;
+import org.example.data.ExpenseRecord;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ExpenseService {
