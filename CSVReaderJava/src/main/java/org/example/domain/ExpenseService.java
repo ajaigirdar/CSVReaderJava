@@ -35,7 +35,7 @@ public class ExpenseService {
     public void addExpenseRecord(LocalDate date, String category, String description, BigDecimal amount, String paymentMethod) {
         ExpenseRecord newRecord = new ExpenseRecord(date, category, description,amount, paymentMethod);
         expenseRecords.add(newRecord);
-        csvReader.writeCSV(expenseRecords);
+        csvReader.appendToCSV(newRecord);
     }
 
 }

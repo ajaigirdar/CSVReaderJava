@@ -1,8 +1,6 @@
 package org.example.data;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -39,7 +37,11 @@ public class CsvReader {
         return records;
     }
 
-    public void writeCSV(List<ExpenseRecord> records) {
-
+    public void appendToCSV(ExpenseRecord record) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+            writer.write(record.toCsvString() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
