@@ -12,7 +12,7 @@ public class ExpenseService {
     }
 
     public List<ExpenseRecord> getAllRecords() {
-        return null;
+        return csvReader.readCSV();
     }
 
     public List<ExpenseRecord> getRecordsByCategory(String category) {
