@@ -1,15 +1,21 @@
 package org.example.domain;
 
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class ExpenseRecord {
-    private Date date;
+    private LocalDate date;
     private String category;
     private String description;
-    private double amount;
+    private BigDecimal amount;
     private String paymentMethod;
+    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    public ExpenseRecord(Date date, String category, String description, double amount, String paymentMethod) {
+
+    public ExpenseRecord(LocalDate date, String category, String description, BigDecimal amount, String paymentMethod) {
         this.date = date;
         this.category = category;
         this.description = description;
@@ -17,11 +23,11 @@ public class ExpenseRecord {
         this.paymentMethod = paymentMethod;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -41,11 +47,11 @@ public class ExpenseRecord {
         this.description = description;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
@@ -59,10 +65,10 @@ public class ExpenseRecord {
 
     @Override
     public String toString() {
-        return "Date: " + date +
-                ", Category: " + category +
-                ", Description: " + description +
-                ", Amount: " + amount +
-                ", Payment Method: " + paymentMethod;
+        return date.format(DATE_FORMAT) + ", " +
+                category + ", " +
+                description + ", " +
+                amount + ", " +
+                paymentMethod;
     }
 }
