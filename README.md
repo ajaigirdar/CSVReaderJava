@@ -1,6 +1,7 @@
-# Expense Report CSV Reader
+# Expense Report CSV Reader 📄
 
-This Java application reads an expense report CSV file and displays the information in the console. The program follows a 3-layer architecture: data, domain, and UI layers.
+This Java application reads an expense report CSV file and displays the information in the console. It is also capable of adding new records to the CSV file.
+The program follows a 3-layer architecture: data, domain, and UI layers.
 
 ## Features
 
@@ -12,7 +13,7 @@ This Java application reads an expense report CSV file and displays the informat
 
 - ` data package: `
  
-  - ` CsvReader: ` Reads data from the CSV file and converts it into ExpenseRecord objects.
+  - ` CsvReader: ` Reads and writes data from the CSV file and converts it into ExpenseRecord objects.
     
   - ` ExpenseRecord: ` Represents individual expense records with fields for date, category, description, amount, and payment method.
 
