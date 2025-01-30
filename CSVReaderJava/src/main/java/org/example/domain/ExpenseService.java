@@ -1,6 +1,7 @@
 package org.example.domain;
 
 import org.example.data.CsvReader;
+import org.example.data.ExpenseRecord;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,13 @@ public class ExpenseService {
     }
 
     public List<ExpenseRecord> getRecordsByCategory(String category) {
-        return null;
+        List<ExpenseRecord> filteredRecords = new ArrayList<>();
+
+        for (ExpenseRecord record : csvReader.readCSV()) {
+            if (record.getCategory().contains(category)) {
+                filteredRecords.add(record);
+            }
+        }
+        return filteredRecords;
     }
 }

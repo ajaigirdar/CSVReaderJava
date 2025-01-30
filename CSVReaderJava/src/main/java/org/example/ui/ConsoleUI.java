@@ -1,9 +1,8 @@
 package org.example.ui;
 
-import org.example.domain.ExpenseRecord;
+import org.example.data.ExpenseRecord;
 import org.example.domain.ExpenseService;
 
-import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 

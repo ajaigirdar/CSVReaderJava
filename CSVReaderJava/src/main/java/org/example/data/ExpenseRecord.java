@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.data;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
